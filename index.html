@@ -3,94 +3,483 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Presentes</title>
+  <title>Danilo - Meu Aniversário 2026 🎂</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 </head>
+
 <body>
-  <h1>Lista de Presentes</h1>
-  <input type="text" id="nome" placeholder="Digite seu nome"/>
-  
-  <div id="lista">
-    <div class="gift" data-id="Luva Airsoft">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_711308-MLB87223513736_072025-F.webp" alt="Luva Airsoft">
-      <span>Luva Airsoft</span>
-      <p>Valor: R$26,09</p>
-      <div class="links">
-        <a href="https://www.mercadolivre.com.br/luva-airsoft-tatica-meio-dedo-paintball-militar-esporte-moto/up/MLBU3285627430#polycard_client=search-desktop&search_layout=grid&position=2&type=product&tracking_id=b1d79d7c-3906-416d-977a-13c301f35353&wid=MLB6232639800&sid=search">Mercado Livre</a>
-      </div>
-      <button onclick="comprar('Luva Airsoft')">Escolher Presente</button>
-    </div>
 
-    <div class="gift" data-id="Kit 2 Cintos Táticos">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_753590-MLA100084669195_122025-F.webp" alt="Kit 2 Cintos Táticos">
-      <span>Kit 2 Cintos Táticos</span>
-      <p>Valor: R$39,99</p>
-      <div class="links">
-        <a href="https://www.mercadolivre.com.br/kit-2-cintos-taticos-preto-nylon-resistente-engate-rapido/p/MLB44681041?pdp_filters=item_id%3AMLB4092851359&from=gshop&matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=c&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128188&matt_product_id=MLB44681041-product&matt_product_partition_id=2424443219726&matt_target_id=pla-2424443219726&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22603531562&gbraid=0AAAAAD93qcAVcVImysANxcgYqh19ceVrY&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-0Fm9rJhCamo3_EavXXJK_nDBFmpdI0OdmdpUBZ1hMhEVK9BJXrhFMaAvF-EALw_wcB">Mercado Livre</a>
+<header class="header">
+  <h1>🎉 Meu Aniversário 🎉</h1>
+</header>
+
+<main class="container">
+
+  <!-- CONTAGEM -->
+  <section class="card">
+    <h2>Faltam apenas:</h2>
+    <div class="countdown">
+      <div><span id="days"></span><small>Dias</small></div>
+      <div><span id="hours"></span><small>Horas</small></div>
+      <div><span id="minutes"></span><small>Min</small></div>
+      <div><span id="seconds"></span><small>Seg</small></div>
+    </div>
+  </section>
+
+  <!-- FOTO + TEXTO -->
+  <section class="card about">
+    <img src="https://media-gru1-1.cdn.whatsapp.net/v/t61.24694-24/480563331_641959081910989_4720984225705443306_n.jpg?ccb=11-4&oh=01_Q5Aa4AH66_jUjDZmGXevT_7KJQrVUcQOkrD23DuZiDSszAV50w&oe=69C69582&_nc_sid=5e03e0&_nc_cat=101" alt="Minha foto">
+
+    <div>
+      <h2>Sobre esse momento</h2>
+
+      <p>
+        Estou muito feliz por estar chegando mais um aniversário! 🎉  
+        Completar mais um ano de vida é algo que me deixa muito grato,
+        principalmente por tudo de bom que vem acontecendo na minha vida.
+      </p>
+
+      <p>
+        Sou muito feliz pelas conquistas, pelas pessoas que estão ao meu lado
+        e por cada momento vivido até aqui. Que esse novo ciclo venha cheio
+        de coisas boas, saúde e muitas realizações! 🙏
+      </p>
+    </div>
+  </section>
+
+  <!-- LISTA -->
+  <section class="card">
+    <h2>Lista de Presentes</h2>
+
+    <div class="input-group">
+  <label for="nome">👤 Quem está escolhendo o presente?</label>
+  <div class="input-box">
+    <input type="text" id="nome" placeholder="Digite seu nome..." />
+  </div>
+</div>
+    <div id="lista">
+
+      <!-- ITEM -->
+      <div class="gift" data-id="Luva Airsoft">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_816808-MLB108172598081_032026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Luva Airsoft</span>
+          <p class="gift-price">R$29,90</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/luva-airsoft-tatica-paintball-militar-esporte-aventura-forte/up/MLBU3672254882?pdp_filters=item_id%3AMLB4357320515&attributes=COLOR%3ABege_vpp&matt_tool=38524122#origin=share&sid=share&wid=MLB4357320515" target="_blank">Ver produto</a>
+          <button onclick="comprar('Luva Airsoft')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Kit 2 Cintos Táticos">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_742958-MLB107425296585_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Kit 2 Cintos Táticos</span>
+          <p class="gift-price">R$39,99</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/kit-2-cintos-taticos-militares-nylon-engate-rapido-metal/up/MLBU3796395033?pdp_filters=item_id%3AMLB6279371666&matt_tool=38524122#origin=share&sid=share&wid=MLB6279371666" target="_blank">Ver produto</a>
+          <button onclick="comprar('Kit 2 Cintos Táticos')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Bota de Segurança Mamute">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_633823-MLB107379221169_022026-F-bota-de-seguranca-em-microfibra-gogowear-mamute-grafite.webp">
+        <div class="gift-content">
+          <span class="gift-title">Bota de Segurança Mamute</span>
+          <p class="gift-price">R$284,90</p>
+          <a class="gift-link" href="https://produto.mercadolivre.com.br/MLB-3689044349-bota-de-seguranca-em-microfibra-gogowear-mamute-grafite-_JM?attributes=COLOR_SECONDARY_COLOR%3AQmVnZQ%3D%3D&matt_tool=38524122#origin=share&sid=share" target="_blank">Ver produto</a>
+          <button onclick="comprar('Bota de Segurança Mamute')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Speed Loader Airsoft">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_740127-MLB92935192781_092025-F-speed-loader-airsoft-1000-bbs-com-manivela-preto-ou-tan.webp">
+        <div class="gift-content">
+          <span class="gift-title">Speed Loader Airsoft</span>
+          <p class="gift-price">R$208,05</p>
+          <a class="gift-link" href="https://produto.mercadolivre.com.br/MLB-1917058121-speed-loader-airsoft-1000-bbs-com-manivela-preto-ou-tan-_JM?attributes=COLOR_SECONDARY_COLOR%3AVGFu&matt_tool=38524122#origin=share&sid=share]" target="_blank">Ver produto</a>
+          <button onclick="comprar('Speed Loader Airsoft')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Trena Laser Bosch">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_736285-MLA99406578476_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Trena Laser Bosch</span>
+          <p class="gift-price">R$464,55</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/trena-a-laser-bosch-50m-glm-50-12/p/MLB27667854?pdp_filters=item_id%3AMLB4688524934&matt_tool=38524122#origin=share&sid=share&wid=MLB4688524934 " target="_blank">Ver produto</a>
+          <button onclick="comprar('Trena Laser Bosch')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Furadeira Dewalt">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_951268-MLA81487390139_122024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Furadeira Dewalt</span>
+          <p class="gift-price">R$969</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/furadeira-e-parafusadeira-de-impacto-20v-dewalt-modelo-dcd7781d1-com-1-bateria-e-carregador/p/MLB19810040#polycard_client=search-desktop&search_layout=grid&position=2&type=product&tracking_id=787b613f-ab6c-4c0f-a656-8007d83279f1&wid=MLB6205661534&sid=search" target="_blank">Ver produto</a>
+          <button onclick="comprar('Furadeira Dewalt')">Escolher Presente</button>
+        </div>
+      </div>
+
+        <div class="gift" data-id="Painel Para Ferramentas Metálico">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_608180-MLB107605454601_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Painel Para Ferramentas Metálico</span>
+          <p class="gift-price">R$202,97</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/painel-para-ferramentas-metalico-970-x-640-mm-presto/up/MLBU1194229214?pdp_filters=item_id%3AMLB1419918166&matt_tool=38524122#origin=share&sid=share&wid=MLB1419918166" target="_blank">Ver produto</a>
+          <button onclick="comprar('Painel Para Ferramentas Metálico')">Escolher Presente</button>
+        </div>
+      </div>
+
+
+       <div class="gift" data-id="Gancho Metálico Simples Para Painel ">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_753451-MLB107607539751_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Gancho Metálico Simples Para Painel</span>
+          <p class="gift-price">R$53,93</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/gancho-metalico-simples-para-painel-porta-ferramentas-10-pcs/up/MLBU1209837556?pdp_filters=item_id%3AMLB1617793561&matt_tool=38524122#origin=share&sid=share&wid=MLB1617793561" target="_blank">Ver produto</a>
+          <button onclick="comprar('Gancho Metálico Simples Para Painel')">Escolher Presente</button>
+        </div>
+      </div>
+       <div class="gift" data-id="Gancho Duplo Para Painel Presto">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_952194-MLA96507144195_102025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Gancho Duplo Para Painel Presto</span>
+          <p class="gift-price">R$54,41</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/gancho-duplo-para-painel-presto/p/MLB29028194?pdp_filters=item_id%3AMLB4229780403&matt_tool=38524122#origin=share&sid=share&wid=MLB4229780403" target="_blank">Ver produto</a>
+          <button onclick="comprar('Gancho Duplo Para Painel Presto')">Escolher Presente</button>
+        </div>
+      </div>
+
+
+       <div class="gift" data-id="Gancho Metálico Simples Para Painel Porta Ferramentas 10 Pçs">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_772612-MLB107607214335_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Gancho Metálico Simples Para Painel Porta Ferramentas 10 Pçs</span>
+          <p class="gift-price">R$56,40</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/gancho-metalico-simples-para-painel-porta-ferramentas-10-pcs/up/MLBU1087236160?pdp_filters=item_id%3AMLB1617774488&matt_tool=38524122#origin=share&sid=share&wid=MLB1617774488" target="_blank">Ver produto</a>
+          <button onclick="comprar('Gancho Metálico Simples Para Painel Porta Ferramentas 10 Pçs')">Escolher Presente</button>
+        </div>
+      </div>
+
+       <div class="gift" data-id="Rádio Comunicador Walk Talk Ht Baofeng Dual Band Uv5r +">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_614825-MLA99963553067_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Rádio Comunicador Walk Talk Ht Baofeng Dual Band Uv5r +</span>
+          <p class="gift-price">R$115</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/radio-comunicador-walk-talk-ht-baofeng-dual-band-uv5r-/p/MLB24076013?pdp_filters=item_id%3AMLB3605048369&matt_tool=38524122#origin=share&sid=share&wid=MLB3605048369" target="_blank">Ver produto</a>
+          <button onclick="comprar('Rádio Comunicador Walk Talk Ht Baofeng Dual Band Uv5r +')">Escolher Presente</button>
+        </div>
+      </div>
+
+       <div class="gift" data-id="Luva Airsoft Tática Paintball Militar">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_789784-MLB107451490610_032026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Luva Airsoft Tática Paintball Militar</span>
+          <p class="gift-price">32,90 </p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/luva-airsoft-tatica-paintball-militar-esporte-aventura-forte/up/MLBU3664218683?pdp_filters=item_id%3AMLB4357346195&attributes=COLOR%3APreto_vpp&matt_tool=38524122#origin=share&sid=share&wid=MLB4357346195" target="_blank">Ver produto</a>
+          <button onclick="comprar('Luva Airsoft Tática Paintball Militar')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Bolsa Saco Anti Chama ">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_801506-MLB97009502130_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Bolsa Saco Anti Chama </span>
+          <p class="gift-price">R$47,77</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/bolsa-saco-anti-chama-bateria-lipo-safe-bag-22-x-29-cm/up/MLBU1409113174?pdp_filters=item_id%3AMLB1658580178&matt_tool=38524122#origin=share&sid=share&wid=MLB1658580178" target="_blank">Ver produto</a>
+          <button onclick="comprar('Bolsa Saco Anti Chama ')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="F Óculos Airsoft Táticos Com Ventilador Anti Embaça F">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_901795-MLB105304982184_012026-F-f-oculos-airsoft-taticos-com-ventilador-anti-embaca-f.webp">
+        <div class="gift-content">
+          <span class="gift-title">F Óculos Airsoft Táticos Com Ventilador Anti Embaça F</span>
+          <p class="gift-price">R$130,79</p>
+          <a class="gift-link" href="https://produto.mercadolivre.com.br/MLB-6199960858-f-oculos-airsoft-taticos-com-ventilador-anti-embaca-f-_JM?matt_tool=38524122#origin=share&sid=share" target="_blank">Ver produto</a>
+          <button onclick="comprar('F Óculos Airsoft Táticos Com Ventilador Anti Embaça F')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="X Funda Para Pistola 1911 Com Porta-carregador Duplo B">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_681827-CBT105616349152_012026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">X Funda Para Pistola 1911 Com Porta-carregador Duplo B</span>
+          <p class="gift-price">R$47,42</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/x-funda-para-pistola-1911-com-porta-carregador-duplo-b/p/MLB2057186236?pdp_filters=item_id%3AMLB6410372994&matt_tool=38524122#origin=share&sid=share&wid=MLB6410372994" target="_blank">Ver produto</a>
+          <button onclick="comprar('X Funda Para Pistola 1911 Com Porta-carregador Duplo B')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Tapa Cano Protetor Airsoft 31x100mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_974658-MLB74464378062_022024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Tapa Cano Protetor Airsoft 31x100mm</span>
+          <p class="gift-price">R$114,14</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/tapa-cano-protetor-airsoft-31x100mm-gg-cyma-neptu-esq-14mm/up/MLBU1421570928?pdp_filters=item_id%3AMLB2140928194&matt_tool=38524122#origin=share&sid=share&wid=MLB2140928194" target="_blank">Ver produto</a>
+          <button onclick="comprar('Tapa Cano Protetor Airsoft 31x100mm')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Mira Holográfica 3-10x42e Modelo M9 Luneta Laser">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_873324-MLB81443371475_122024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Mira Holográfica 3-10x42e Modelo M9 Luneta Laser</span>
+          <p class="gift-price">R$209,99</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/mira-holografica-310x42e-modelo-m9-luneta-laser/up/MLBU2904552148?pdp_filters=item_id%3AMLB3934595925&matt_tool=38524122#origin=share&sid=share&wid=MLB3934595925" target="_blank">Ver produto</a>
+          <button onclick="comprar('Mira Holográfica 3-10x42e Modelo M9 Luneta Laser')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Colimador Calibrador Laser Aferidor Mira Universal Vector">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_812732-MLB77577962728_072024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Colimador Calibrador Laser Aferidor Mira Universal Vector</span>
+          <p class="gift-price">R$274,84</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/colimador-calibrador-laser-aferidor-mira-universal-vector/up/MLBU757208316?pdp_filters=item_id%3AMLB3043336299&matt_tool=38524122#origin=share&sid=share&wid=MLB3043336299" target="_blank">Ver produto</a>
+          <button onclick="comprar('Colimador Calibrador Laser Aferidor Mira Universal Vector')">Escolher Presente</button>
+        </div>
+      </div>
+
+      <div class="gift" data-id="Airsoft - T238 Tracer, Chronografo E Spitfire - Daybreak">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_766305-MLB107465322173_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Airsoft - T238 Tracer, Chronografo E Spitfire - Daybreak</span>
+          <p class="gift-price">R$885,90</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/airsoft--t238-tracer-chronografo-e-spitfire--daybreak/up/MLBU3799380129?pdp_filters=item_id%3AMLB6289013016&matt_tool=38524122#origin=share&sid=share&wid=MLB6289013016" target="_blank">Ver produto</a>
+          <button onclick="comprar('Airsoft - T238 Tracer, Chronografo E Spitfire - Daybreak')">Escolher Presente</button>
+        </div>
+
+
+      </div>
+      <div class="gift" data-id="Purificador De Água Everest Star Branco">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_868826-MLB79266582058_092024-F-purificador-de-agua-everest-star-branco.webp">
+        <div class="gift-content">
+          <span class="gift-title">Purificador De Água Everest Star Branco</span>
+          <p class="gift-price">R$1291,65</p>
+          <a class="gift-link" href="https://produto.mercadolivre.com.br/MLB-3944758139-purificador-de-agua-everest-star-branco-_JM?matt_tool=38524122#origin=share&sid=share" target="_blank">Ver produto</a>
+          <button onclick="comprar('Purificador De Água Everest Star Branco')">Escolher Presente</button>
+        </div>
+
+      </div>
+      <div class="gift" data-id="Airsoft - Pote Bbs Tango Down 0.28 5000 Unidades Branco">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_932601-MLB107343187187_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Airsoft - Pote Bbs Tango Down 0.28 5000 Unidades Branco</span>
+          <p class="gift-price">R$139,95</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/airsoft--pote-bbs-tango-down-028-5000-unidades/up/MLBU3800129796?pdp_filters=item_id%3AMLB6255989976&matt_tool=38524122#origin=share&sid=share&wid=MLB6255989976" target="_blank">Ver produto</a>
+          <button onclick="comprar('Airsoft - Pote Bbs Tango Down 0.28 5000 Unidades Branco')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Luneta Lpvo Ozec Original Segundo Plano Preto/ Mount 20-22mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_708524-MLB107367844611_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Luneta Lpvo Ozec Original Segundo Plano Preto/ Mount 20-22mm</span>
+          <p class="gift-price">R$774,94</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/shortdot-126x24-luneta-lpvo-ozec-original-segundo-plano/up/MLBU3801531732?pdp_filters=item_id%3AMLB4477512801&matt_tool=38524122#origin=share&sid=share&wid=MLB4477512801" target="_blank">Ver produto</a>
+          <button onclick="comprar('Luneta Lpvo Ozec Original Segundo Plano Preto/ Mount 20-22mm')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Suporte Mount Para Luneta Lpvo Vector Optics 22mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_625169-MLB101578668387_122025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Suporte Mount Para Luneta Lpvo Vector Optics 22mm</span>
+          <p class="gift-price">R$351,50</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/suporte-mount-para-luneta-lpvo-vector-optics-22mm/up/MLBU3685553414?pdp_filters=item_id%3AMLB4369039407&matt_tool=38524122#origin=share&sid=share&wid=MLB4369039407" target="_blank">Ver produto</a>
+          <button onclick="comprar('Suporte Mount Para Luneta Lpvo Vector Optics 22mm')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Motor Airsoft T238 Brushless Eixo Longo 33k - Padrão M4.">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_995473-MLB106759517566_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Motor Airsoft T238 Brushless Eixo Longo 33k - Padrão M4.</span>
+          <p class="gift-price">R$929,90</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/motor-airsoft-t238-brushless-eixo-longo-33k--padrao-m4/up/MLBU3806363744?pdp_filters=item_id%3AMLB6279494336&matt_tool=38524122#origin=share&sid=share&wid=MLB6279494336" target="_blank">Ver produto</a>
+          <button onclick="comprar('Motor Airsoft T238 Brushless Eixo Longo 33k - Padrão M4.')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Esferas Bolinhas Bbs 0.30g 5000 Un - Tango Down ">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_629996-MLB106708918886_022026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Esferas Bolinhas Bbs 0.30g 5000 Un - Tango Down </span>
+          <p class="gift-price">R$207,95</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/airsoft--esferas-bolinhas-bbs-030g-5000-un--tango-down/up/MLBU3801996320?pdp_filters=item_id%3AMLB6257142806&matt_tool=38524122#origin=share&sid=share&wid=MLB6257142806" target="_blank">Ver produto</a>
+          <button onclick="comprar('Esferas Bolinhas Bbs 0.30g 5000 Un - Tango Down ')">Escolher Presente</button>
+        </div>
+      </div>
+
+
+
+
+      <div class="gift" data-id="Pistola Airsoft Gás Gbb 1911 Hi-capa Speed 6mm Rossi + Kit Black 6 Mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_888556-MLA98115805939_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Pistola Airsoft Gás Gbb 1911 Hi-capa Speed 6mm Rossi + Kit Black 6 Mm</span>
+          <p class="gift-price">R$1.648,32</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/pistola-airsoft-gas-gbb-1911-hi-capa-speed-6mm-rossi-kit-black-6-mm/p/MLB62077336?pdp_filters=item_id%3AMLB6448835038&matt_tool=38524122#origin=share&sid=share&wid=MLB6448835038" target="_blank">Ver produto</a>
+          <button onclick="comprar('Pistola Airsoft Gás Gbb 1911 Hi-capa Speed 6mm Rossi + Kit Black 6 Mm')">Escolher Presente</button>
+        </div>
+      </div>
+
+
+
+      <div class="gift" data-id="Carregador Airsoft Speed Loader M4 - 400 Bolinhas - Preto. Preto">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_811875-MLB98659653622_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Carregador Airsoft Speed Loader M4 - 400 Bolinhas - Preto. Preto</span>
+          <p class="gift-price">R$86</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/carregador-airsoft-speed-loader-m4--400-bolinhas--preto/up/MLBU3773882608?pdp_filters=item_id%3AMLB4456660143&matt_tool=38524122#origin=share&sid=share&wid=MLB4456660143" target="_blank">Ver produto</a>
+          <button onclick="comprar('Carregador Airsoft Speed Loader M4 - 400 Bolinhas - Preto. Preto')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Pistola Airsoft Glock G19x Umarex Officially Authorized 6mm Coyote 6 Mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_997401-MLB89502629436_082025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Pistola Airsoft Glock G19x Umarex Officially Authorized 6mm Coyote 6 Mm</span>
+          <p class="gift-price">R$2.438,34</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/pistola-airsoft-glock-g19x-umarex-officially-authorized-6mm/up/MLBU3352023715?pdp_filters=item_id%3AMLB5571928228&matt_tool=38524122#origin=share&sid=share&wid=MLB5571928228" target="_blank">Ver produto</a>
+          <button onclick="comprar('Pistola Airsoft Glock G19x Umarex Officially Authorized 6mm Coyote 6 Mm')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Pistola De Airsoft 1911 Hi-capa Short Gbb Greengas 6mm Rossi Preto 6 Mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_704171-MLB97021484771_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Pistola De Airsoft 1911 Hi-capa Short Gbb Greengas 6mm Rossi Preto 6 Mm</span>
+          <p class="gift-price">R$1.356,12</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/pistola-de-airsoft-1911-hicapa-short-gbb-greengas-6mm-rossi/up/MLBU3529372433?pdp_filters=item_id%3AMLB4285226211&matt_tool=38524122#origin=share&sid=share&wid=MLB4285226211" target="_blank">Ver produto</a>
+          <button onclick="comprar('Pistola De Airsoft 1911 Hi-capa Short Gbb Greengas 6mm Rossi Preto 6 Mm')">Escolher Presente</button>
+        </div>
+      </div>
       
+      <div class="gift" data-id="Coldre Para Hi Capa 1911 Blackdevil Redwins Bereta Pts Imbel">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_855409-MLB93043641336_092025-F-coldre-para-hi-capa-1911-blackdevil-redwins-bereta-pts-imbel.webp">
+        <div class="gift-content">
+          <span class="gift-title">Coldre Para Hi Capa 1911 Blackdevil Redwins Bereta Pts Imbel</span>
+          <p class="gift-price">R$187,96</p>
+          <a class="gift-link" href="" target="_blank">Ver produto</a>
+          <button onclick="comprar('Coldre Para Hi Capa 1911 Blackdevil Redwins Bereta Pts Imbel')">Escolher Presente</button>
+        </div>
       </div>
-      <button onclick="comprar('Kit 2 Cintos Táticos')">Escolher Presente</button>
-    </div>
-
-    <div class="gift" data-id="Bota de Segurança Mamute">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_981146-MLB97382965648_112025-F-botina-bota-seguranca-trilha-mamute-nylon-cinza-gogowear-ca.webp" alt="Bota de Segurança Mamute">
-      <span>Bota de Segurança Mamute</span>
-      <p>Valor: R$284,90</p>
-      <div class="links">
-        <a href="https://produto.mercadolivre.com.br/MLB-5922299458-botina-bota-seguranca-trilha-mamute-nylon-cinza-gogowear-ca-_JM?matt_tool=45048704&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354304&matt_ad_group_id=193044724034&matt_match_type=&matt_network=g&matt_device=c&matt_creative=787871578970&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=5310730419&matt_product_id=MLB5922299458&matt_product_partition_id=2453728424569&matt_target_id=pla-2453728424569&cq_src=google_ads&cq_cmp=22090354304&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354304&gbraid=0AAAAAD93qcC1nY1i_YEc4SlJgMgylhUqS&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-1bN5X_yBeXs0fO40tvlmsCdE_YZSRH7QJ2rMBkTrtUSX5Y-NS7h5gaAnU6EALw_wcB">Mercado Livre</a>
-   
+      <div class="gift" data-id="Braçadeira Faixa Airsoft Paintball Dupla Face Amarela Azul Amarelo E Azul Único">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_995036-MLB93625510022_102025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Braçadeira Faixa Airsoft Paintball Dupla Face Amarela Azul Amarelo E Azul Único</span>
+          <p class="gift-price">R$29</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/bracadeira-faixa-airsoft-paintball-dupla-face-amarela-azul/up/MLBU3138149028?pdp_filters=item_id%3AMLB5359421932&matt_tool=38524122#origin=share&sid=share&wid=MLB5359421932" target="_blank">Ver produto</a>
+          <button onclick="comprar('Braçadeira Faixa Airsoft Paintball Dupla Face Amarela Azul Amarelo E Azul Único')">Escolher Presente</button>
+        </div>
       </div>
-      <button onclick="comprar('Bota de Segurança Mamute')">Comprar</button>
+      <div class="gift" data-id="Tático Headset P Capacete Fone Ouvido Militar Airsoft Desert">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_953024-MLB77386781657_072024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Tático Headset P Capacete Fone Ouvido Militar Airsoft Desert</span>
+          <p class="gift-price">R$669</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/tatico-headset-p-capacete-fone-ouvido-militar-airsoft/up/MLBU1462108586?pdp_filters=item_id%3AMLB3763660087&matt_tool=38524122#origin=share&sid=share&wid=MLB3763660087" target="_blank">Ver produto</a>
+          <button onclick="comprar('Tático Headset P Capacete Fone Ouvido Militar Airsoft Desert')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Rifle Airsoft G&g G3h Tr80 Dmr Gos-v12 Aeg Preto Preto 6 Mm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_932325-MLB102996588741_122025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Rifle Airsoft G&g G3h Tr80 Dmr Gos-v12 Aeg Preto Preto 6 Mm</span>
+          <p class="gift-price">R$6.615</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/rifle-airsoft-gg-g3h-tr80-dmr-gosv12-aeg-preto/up/MLBU3696736703?pdp_filters=item_id%3AMLB4391906835&matt_tool=38524122#origin=share&sid=share&wid=MLB4391906835" target="_blank">Ver produto</a>
+          <button onclick="comprar('Rifle Airsoft G&g G3h Tr80 Dmr Gos-v12 Aeg Preto Preto 6 Mm')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Calça Tatica Camuflado - Mandrake - Airsoft">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_768309-MLB81888946854_012025-F-calca-tatica-camuflado-mandrake-airsoft.webp">
+        <div class="gift-content">
+          <span class="gift-title">Calça Tatica Camuflado - Mandrake - Airsoft</span>
+          <p class="gift-price">R$96</p>
+          <a class="gift-link" href="https://produto.mercadolivre.com.br/MLB-5271982798-calca-tatica-camuflado-mandrake-airsoft-_JM?attributes=FABRIC_DESIGN%3AR3JlZW4%3D%2CCOLOR_SECONDARY_COLOR%3AQ2FtdWZsYWRvIE1hbmRyYWtl%2CSIZE%3ARVhHIDU0LzU2&matt_tool=38524122#origin=share&sid=share%20Mira%20Hologr%C3%A1fica" target="_blank">Ver produto</a>
+          <button onclick="comprar('Calça Tatica Camuflado - Mandrake - Airsoft')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Mira Holográfica 3-10x42e Modelo M9 Luneta Laser">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_873324-MLB81443371475_122024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Mira Holográfica 3-10x42e Modelo M9 Luneta Laser</span>
+          <p class="gift-price">R$209,99</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/mira-holografica-310x42e-modelo-m9-luneta-laser/up/MLBU2904552148?pdp_filters=item_id%3AMLB3934595925&matt_tool=38524122#origin=share&sid=share&wid=MLB3934595925" target="_blank">Ver produto</a>
+          <button onclick="comprar('Mira Holográfica 3-10x42e Modelo M9 Luneta Laser')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Case Maleta Estojo Multiuso 120cm Sc Eagle">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_802251-MLB79325833871_092024-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Case Maleta Estojo Multiuso 120cm Sc Eagle</span>
+          <p class="gift-price">R$445,55</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/case-maleta-estojo-multiuso-120cm-sc-eagle/up/MLBU1741247297?pdp_filters=item_id%3AMLB3853040651&matt_tool=38524122#origin=share&sid=share&wid=MLB3853040651" target="_blank">Ver produto</a>
+          <button onclick="comprar('Case Maleta Estojo Multiuso 120cm Sc Eagle')">Escolher Presente</button>
+        </div>
+      </div>
+      <div class="gift" data-id="Kit Martelete Sds Plus 20v Dch133 + Dcg408 + Dcd7781 Complet Preto/amarelo 127/220v 50/60">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_907516-MLB90165727616_082025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Kit Martelete Sds Plus 20v Dch133 + Dcg408 + Dcd7781 Complet Preto/amarelo 127/220v 50/60</span>
+          <p class="gift-price">R$4.849,03</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/kit-martelete-sds-plus-20v-dch133--dcg408--dcd7781-complet/up/MLBU3376906934?pdp_filters=item_id%3AMLB4169506679&matt_tool=38524122#origin=share&sid=share&wid=MLB4169506679" target="_blank">Ver produto</a>
+          <button onclick="comprar('Kit Martelete Sds Plus 20v Dch133 + Dcg408 + Dcd7781 Complet Preto/amarelo 127/220v 50/60')">Escolher Presente</button>
+        </div>
+      </div>
+
+       <div class="gift" data-id="Kit Parafusadeira e Furadeira de Impacto Dewalt DCD778 e Parafusadeira DCF7871 e Esmerilhadeira DCG413B">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_638080-MLA99500627304_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Kit Parafusadeira e Furadeira de Impacto Dewalt DCD778 e Parafusadeira DCF7871 e Esmerilhadeira DCG413B</span>
+          <p class="gift-price">R$2.849,90</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/kit-parafusadeira-e-furadeira-de-impacto-dewalt-dcd778-e-parafusadeira-dcf7871-e-esmerilhadeira-dcg413b/p/MLB27718803?pdp_filters=item_id%3AMLB3555977349&matt_tool=38524122#origin=share&sid=share&wid=MLB3555977349" target="_blank">Ver produto</a>
+          <button onclick="comprar('Kit Parafusadeira e Furadeira de Impacto Dewalt DCD778 e Parafusadeira DCF7871 e Esmerilhadeira DCG413B')">Escolher Presente</button>
+        </div>
+      </div>
+       <div class="gift" data-id="Furadeira Martelete Dcd796 Dewalt + Bateria + Bolsa Amarelo/preto 127/220v">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_842908-MLB92521205061_092025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Furadeira Martelete Dcd796 Dewalt + Bateria + Bolsa Amarelo/preto 127/220v</span>
+          <p class="gift-price">R$1.831</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/furadeira-martelete-dcd796-dewalt--bateria--bolsa/up/MLBU3065469787?pdp_filters=item_id%3AMLB5317722122&matt_tool=38524122#origin=share&sid=share&wid=MLB5317722122" target="_blank">Ver produto</a>
+          <button onclick="comprar('Furadeira Martelete Dcd796 Dewalt + Bateria + Bolsa Amarelo/preto 127/220v')">Escolher Presente</button>
+        </div>
+      </div>
+       <div class="gift" data-id="Trena Medidor a Laser De Distancia Bosch GLM 40 Com Bolsa">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_887446-MLA99936672177_112025-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Trena Medidor a Laser De Distancia Bosch GLM 40 Com Bolsa</span>
+          <p class="gift-price">R$360,96</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/trena-medidor-a-laser-de-distancia-bosch-glm-40-com-bolsa/p/MLB9603881?pdp_filters=item_id%3AMLB3902237057&matt_tool=38524122#origin=share&sid=share&wid=MLB3902237057 " target="_blank">Ver produto</a>
+          <button onclick="comprar('Trena Medidor a Laser De Distancia Bosch GLM 40 Com Bolsa')">Escolher Presente</button>
+        </div>
+      </div>
+       <div class="gift" data-id="Testador de rede Poe de tela colorida FNIRSI">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_757452-MLA105823790301_012026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">estador de rede Poe de tela colorida FNIRSI</span>
+          <p class="gift-price">R$699</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/testador-de-rede-poe-de-tela-colorida-fnirsi-lpm-10-comprimento-rj45/p/MLB64960987?pdp_filters=item_id%3AMLB6279373034&matt_tool=38524122#origin=share&sid=share&wid=MLB6279373034 " target="_blank">Ver produto</a>
+          <button onclick="comprar('estador de rede Poe de tela colorida FNIRSI')">Escolher Presente</button>
+        </div>
+      
+       
+       
+      </div>
+       <div class="gift" data-id="Kit Localizador E Testador De Cabos Tx1500 Multitoc Original">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_961914-MLB105315785466_012026-F.webp">
+        <div class="gift-content">
+          <span class="gift-title">Kit Localizador E Testador De Cabos Tx1500 Multitoc Original</span>
+          <p class="gift-price">R$375</p>
+          <a class="gift-link" href="https://www.mercadolivre.com.br/kit-localizador-e-testador-de-cabos-tx1500-multitoc-original/up/MLBU1413550145?pdp_filters=item_id%3AMLB1331854066&matt_event_ts=1773777964688&matt_d2id=e71ad88e-4b60-4315-9724-ba6b7d0dc9c3&matt_tracing_id=c41f1807-0349-4b24-b9e0-4c6c95596084#reco_backend=item_decorator&wid=MLB1331854066&reco_client=home_affiliate-profile&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e142f00a-f6b3-4418-b62a-67cf4c1fd6a4&tracking_id=638cca6c-82aa-40aa-a5f9-1d94bd8ef20a&sid=recos&c_id=/home/card-featured/element&c_uid=369cdedd-119e-4c8f-85b0-7e30f4e6382d" target="_blank">Ver produto</a>
+          <button onclick="comprar('Kit Localizador E Testador De Cabos Tx1500 Multitoc Original')">Escolher Presente</button>
+        </div>
+      </div>
+
+
+</div>
+
     </div>
+  </section>
 
-    <div class="gift" data-id="Speed Loader Airsoft">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_900089-MLA105590737018_012026-F.webp" alt="Speed Loader Airsoft">
-      <span>Speed Loader Airsoft</span>
-      <p>Valor: R$86,00</p>
-      <div class="links">
-        <a href="https://www.mercadolivre.com.br/speed-loader-bb-magazine-carregador-mid-cap-bbs-airsoft-6mm/up/MLBU1949535653?pdp_filters=item_id:MLB2633848183#is_advertising=true&searchVariation=MLBU1949535653&backend_model=search-backend&position=2&search_layout=grid&type=pad&tracking_id=ea06d902-13f5-4158-9a75-06b9a16088f0&ad_domain=VQCATCORE_LST&ad_position=2&ad_click_id=ZDVlNjRjYzgtMWY4ZS00NDcxLWJiY2QtMTJmMjA5Zjg3ZThm">Mercado Livre</a>
-     </div>
-      <button onclick="comprar('panela de pressao')">Comprar</button>
-    </div>
+</main>
 
- 
-  <div class="gift" data-id="Trena Laser Bosch">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_887446-MLA99936672177_112025-F.webp" alt="Trena Laser Bosch">
-      <span>Trena Laser Bosch</span>
-       <p>Valor: R$464,55</p>
-      <div class="links">
-        <a href="https://www.mercadolivre.com.br/trena-medidor-a-laser-de-distancia-bosch-glm-40-com-bolsa/p/MLB9603881?pdp_filters=item_id%3AMLB3902237057&from=gshop&matt_tool=41164019&matt_word=&matt_source=google&matt_campaign_id=23351281871&matt_ad_group_id=195616610528&matt_match_type=&matt_network=g&matt_device=c&matt_creative=787871581091&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128761&matt_product_id=MLB9603881-product&matt_product_partition_id=2387496046547&matt_target_id=pla-2387496046547&cq_src=google_ads&cq_cmp=23351281871&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=23351281871&gbraid=0AAAAAD93qcDCEhWyvk94SsIkM-sHiHsaV&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-2JlqNMznHSot9lfQIYAQS-pDsciIjXPEfEqElb2OtFfuZf0knDH60aApvkEALw_wcB">Mercado Livre</a>
-     </div>
-      <button onclick="comprar('Trena Laser Bosch')">Comprar</button>
-    </div>
- 
-<div class="gift" data-id="Furadeira Dewalt">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_951268-MLA81487390139_122024-F.webp" alt="Furadeira Dewalt">
-      <span>Furadeira Dewalt</span>
-      <p>Valor: R$1047,88</p>
-      <div class="links">
-        <a href="https://www.mercadolivre.com.br/furadeira-e-parafusadeira-a-bateria-20v-dewalt-modelo-dcd7781d2-2-baterias-e-1-carregador/p/MLB22230575?pdp_filters=item_id%3AMLB5681524912&from=gshop&matt_tool=24054308&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354025&matt_ad_group_id=173090516356&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727882726251&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735098639&matt_product_id=MLB22230575-product&matt_product_partition_id=2388009258186&matt_target_id=pla-2388009258186&cq_src=google_ads&cq_cmp=22090354025&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354025&gbraid=0AAAAAD93qcBFHuQqBn1flYHD2dHkcKj22&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-39Tdf5m_Nyads9_CGOFKdvek3svQIha9MqzyZN10sPN53AYrhcZV8aAv_2EALw_wcB">Mercado Livre</a>
-     </div>
-      <button onclick="comprar('Furadeira Dewalt')">Comprar</button>
-    </div>
- 
-    
-    <script src="script.js"></script>
-    
-  </body>
-  </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="script.js"></script>
+</body>
+</html>
