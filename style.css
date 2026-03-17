@@ -1,0 +1,70 @@
+ body {
+      font-family: Arial, sans-serif;
+      background: #fcfcfc;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #3133a3;
+    }
+    input {
+      padding: 8px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 250px;
+    }
+    #lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .gift {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      padding: 20px;
+      text-align: center;
+      max-width: 250px;
+      width: 100%;
+    }
+    .gift img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .gift span {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 10px;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .links a {
+      text-decoration: none;
+      color: purple;
+      transition: color 0.3s ease;
+    }
+    .links a:hover {
+      color: #b266ff;
+    }
+    button {
+      padding: 8px 12px;
+      background: #3133a3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover:enabled {
+      background: #9d5cc0;
+    }
+    button:disabled {
+      background: gray;
+      color: white;
+      cursor: not-allowed;
+    }

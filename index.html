@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presentes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <h1>Lista de Presentes</h1>
+  <input type="text" id="nome" placeholder="Digite seu nome"/>
+  
+  <div id="lista">
+    <div class="gift" data-id="Luva Airsoft">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_711308-MLB87223513736_072025-F.webp" alt="Luva Airsoft">
+      <span>Luva Airsoft</span>
+      <p>Valor: R$26,09</p>
+      <div class="links">
+        <a href="https://www.mercadolivre.com.br/luva-airsoft-tatica-meio-dedo-paintball-militar-esporte-moto/up/MLBU3285627430#polycard_client=search-desktop&search_layout=grid&position=2&type=product&tracking_id=b1d79d7c-3906-416d-977a-13c301f35353&wid=MLB6232639800&sid=search">Mercado Livre</a>
+      </div>
+      <button onclick="comprar('Luva Airsoft')">Escolher Presente</button>
+    </div>
+
+    <div class="gift" data-id="Kit 2 Cintos Táticos">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_753590-MLA100084669195_122025-F.webp" alt="Kit 2 Cintos Táticos">
+      <span>Kit 2 Cintos Táticos</span>
+      <p>Valor: R$39,99</p>
+      <div class="links">
+        <a href="https://www.mercadolivre.com.br/kit-2-cintos-taticos-preto-nylon-resistente-engate-rapido/p/MLB44681041?pdp_filters=item_id%3AMLB4092851359&from=gshop&matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=c&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128188&matt_product_id=MLB44681041-product&matt_product_partition_id=2424443219726&matt_target_id=pla-2424443219726&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22603531562&gbraid=0AAAAAD93qcAVcVImysANxcgYqh19ceVrY&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-0Fm9rJhCamo3_EavXXJK_nDBFmpdI0OdmdpUBZ1hMhEVK9BJXrhFMaAvF-EALw_wcB">Mercado Livre</a>
+      
+      </div>
+      <button onclick="comprar('Kit 2 Cintos Táticos')">Escolher Presente</button>
+    </div>
+
+    <div class="gift" data-id="Bota de Segurança Mamute">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_981146-MLB97382965648_112025-F-botina-bota-seguranca-trilha-mamute-nylon-cinza-gogowear-ca.webp" alt="Bota de Segurança Mamute">
+      <span>Bota de Segurança Mamute</span>
+      <p>Valor: R$284,90</p>
+      <div class="links">
+        <a href="https://produto.mercadolivre.com.br/MLB-5922299458-botina-bota-seguranca-trilha-mamute-nylon-cinza-gogowear-ca-_JM?matt_tool=45048704&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354304&matt_ad_group_id=193044724034&matt_match_type=&matt_network=g&matt_device=c&matt_creative=787871578970&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=5310730419&matt_product_id=MLB5922299458&matt_product_partition_id=2453728424569&matt_target_id=pla-2453728424569&cq_src=google_ads&cq_cmp=22090354304&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354304&gbraid=0AAAAAD93qcC1nY1i_YEc4SlJgMgylhUqS&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-1bN5X_yBeXs0fO40tvlmsCdE_YZSRH7QJ2rMBkTrtUSX5Y-NS7h5gaAnU6EALw_wcB">Mercado Livre</a>
+   
+      </div>
+      <button onclick="comprar('Bota de Segurança Mamute')">Comprar</button>
+    </div>
+
+    <div class="gift" data-id="Speed Loader Airsoft">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_900089-MLA105590737018_012026-F.webp" alt="Speed Loader Airsoft">
+      <span>Speed Loader Airsoft</span>
+      <p>Valor: R$86,00</p>
+      <div class="links">
+        <a href="https://www.mercadolivre.com.br/speed-loader-bb-magazine-carregador-mid-cap-bbs-airsoft-6mm/up/MLBU1949535653?pdp_filters=item_id:MLB2633848183#is_advertising=true&searchVariation=MLBU1949535653&backend_model=search-backend&position=2&search_layout=grid&type=pad&tracking_id=ea06d902-13f5-4158-9a75-06b9a16088f0&ad_domain=VQCATCORE_LST&ad_position=2&ad_click_id=ZDVlNjRjYzgtMWY4ZS00NDcxLWJiY2QtMTJmMjA5Zjg3ZThm">Mercado Livre</a>
+     </div>
+      <button onclick="comprar('panela de pressao')">Comprar</button>
+    </div>
+
+ 
+  <div class="gift" data-id="Trena Laser Bosch">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_887446-MLA99936672177_112025-F.webp" alt="Trena Laser Bosch">
+      <span>Trena Laser Bosch</span>
+       <p>Valor: R$464,55</p>
+      <div class="links">
+        <a href="https://www.mercadolivre.com.br/trena-medidor-a-laser-de-distancia-bosch-glm-40-com-bolsa/p/MLB9603881?pdp_filters=item_id%3AMLB3902237057&from=gshop&matt_tool=41164019&matt_word=&matt_source=google&matt_campaign_id=23351281871&matt_ad_group_id=195616610528&matt_match_type=&matt_network=g&matt_device=c&matt_creative=787871581091&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128761&matt_product_id=MLB9603881-product&matt_product_partition_id=2387496046547&matt_target_id=pla-2387496046547&cq_src=google_ads&cq_cmp=23351281871&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=23351281871&gbraid=0AAAAAD93qcDCEhWyvk94SsIkM-sHiHsaV&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-2JlqNMznHSot9lfQIYAQS-pDsciIjXPEfEqElb2OtFfuZf0knDH60aApvkEALw_wcB">Mercado Livre</a>
+     </div>
+      <button onclick="comprar('Trena Laser Bosch')">Comprar</button>
+    </div>
+ 
+<div class="gift" data-id="Furadeira Dewalt">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_951268-MLA81487390139_122024-F.webp" alt="Furadeira Dewalt">
+      <span>Furadeira Dewalt</span>
+      <p>Valor: R$1047,88</p>
+      <div class="links">
+        <a href="https://www.mercadolivre.com.br/furadeira-e-parafusadeira-a-bateria-20v-dewalt-modelo-dcd7781d2-2-baterias-e-1-carregador/p/MLB22230575?pdp_filters=item_id%3AMLB5681524912&from=gshop&matt_tool=24054308&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354025&matt_ad_group_id=173090516356&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727882726251&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735098639&matt_product_id=MLB22230575-product&matt_product_partition_id=2388009258186&matt_target_id=pla-2388009258186&cq_src=google_ads&cq_cmp=22090354025&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354025&gbraid=0AAAAAD93qcBFHuQqBn1flYHD2dHkcKj22&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-39Tdf5m_Nyads9_CGOFKdvek3svQIha9MqzyZN10sPN53AYrhcZV8aAv_2EALw_wcB">Mercado Livre</a>
+     </div>
+      <button onclick="comprar('Furadeira Dewalt')">Comprar</button>
+    </div>
+ 
+    
+    <script src="script.js"></script>
+    
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
